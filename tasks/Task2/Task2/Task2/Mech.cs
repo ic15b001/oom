@@ -27,8 +27,8 @@ namespace Task2
         public string Bezeichnung { get; }
         public string Klasse { get; }
         public decimal Tonne { get; }
-        public decimal Preis { get; }
-      
+        public decimal Preis { get; } //public decimal Preis { get { return m_preis; } set { m_preis = value; } }
+
         public decimal Preisupdate()
         {
             return Preis * 2;
