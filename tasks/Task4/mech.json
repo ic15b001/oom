@@ -1,0 +1,26 @@
+[
+  {
+    "Bezeichnung": "Panther",
+    "Klasse": "Leicht",
+    "Tonne": 35.0,
+    "Preis": 35000.0
+  },
+  {
+    "Bezeichnung": "Steppenwolf",
+    "Klasse": "Mittel",
+    "Tonne": 45.0,
+    "Preis": 45000.0
+  },
+  {
+    "Bezeichnung": "Marauder",
+    "Klasse": "Schwer",
+    "Tonne": 75.0,
+    "Preis": 75000.0
+  },
+  {
+    "Bezeichnung": "Atlas",
+    "Klasse": "Überschwer",
+    "Tonne": 100.0,
+    "Preis": 100000.0
+  }
+]
