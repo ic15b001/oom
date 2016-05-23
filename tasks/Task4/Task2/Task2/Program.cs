@@ -60,24 +60,30 @@ namespace Task2
             Console.WriteLine("\n----- Tank END -----\n");
 
             var json = serializer(mech);
-            using (var sw = new StreamWriter(new FileStream(@"C:\Users\HP\Desktop\OOM\Teil 2\oom\tasks\Task4\mech.json", FileMode.Create)))
-            {
-                sw.Write(json);
-            }
-            var fs = new FileStream(@"C:\Users\HP\Desktop\OOM\Teil 2\oom\tasks\Task4\mech.json", FileMode.Open);
-            var sr = new StreamReader(fs);
 
-            string filetext = sr.ReadToEnd();
+            var filestreamcreate = new FileStream(@"C:\Users\HP\Desktop\OOM\Teil 2\oom\tasks\Task4\mech.json", FileMode.Create);
 
+            var jsonfilewriter = new StreamWriter(filestreamcreate);
+            
+            jsonfilewriter.Write(json);
+
+            jsonfilewriter.Close();
+            filestreamcreate.Close();
+
+            var filestreamopen = new FileStream(@"C:\Users\HP\Desktop\OOM\Teil 2\oom\tasks\Task4\mech.json", FileMode.Open);
+
+            var jsonfilereader = new StreamReader(filestreamopen);
+            
+            string filetext = jsonfilereader.ReadToEnd();
             var objectarray = deserializer(filetext);
-
-            sr.Close();
-            fs.Close();
-
             Console.WriteLine(filetext);
+
+            jsonfilereader.Close();
+                                          
+            filestreamopen.Close();
+                       
         }
-
-
+        
         public static string serializer(Mech[] x)
         {
             return JsonConvert.SerializeObject(x, Formatting.Indented);
