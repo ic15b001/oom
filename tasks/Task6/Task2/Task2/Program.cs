@@ -83,7 +83,10 @@ namespace Task2
             jsonfilereader.Close();
                                           
             filestreamopen.Close();
-                       
+
+            PushExampleWithSubject.Run(ifahrzeuge);
+            TasksExample.Run(ifahrzeuge);
+
         }
         
         public static string serializer(Mech[] x)
@@ -95,6 +98,8 @@ namespace Task2
         {
             return JsonConvert.DeserializeObject<Mech[]>(json);
         }
+
+        
 
     }
 }
